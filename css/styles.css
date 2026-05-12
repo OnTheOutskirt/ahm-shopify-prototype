@@ -2812,3 +2812,78 @@ h3 {
     transform: translate(-50%, 0);
   }
 }
+
+/* Client preview switcher: remove before final production theme build. */
+.client-preview-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 44px minmax(180px, auto) 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: var(--white);
+  background: rgba(16, 32, 51, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  box-shadow: 0 18px 44px rgba(16, 32, 51, 0.24);
+  transform: translateX(-50%);
+  backdrop-filter: blur(12px);
+}
+
+.preview-arrow {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.preview-arrow:hover {
+  color: var(--white);
+  background: var(--orange);
+}
+
+.preview-current {
+  display: grid;
+  min-width: 190px;
+  padding: 0 12px;
+  text-align: center;
+}
+
+.preview-current span {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.preview-current strong {
+  color: var(--white);
+  font-size: 0.98rem;
+}
+
+@media (max-width: 520px) {
+  .client-preview-nav {
+    bottom: 10px;
+    grid-template-columns: 40px minmax(142px, 1fr) 40px;
+    width: min(100% - 20px, 360px);
+  }
+
+  .preview-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .preview-current {
+    min-width: 0;
+  }
+}
